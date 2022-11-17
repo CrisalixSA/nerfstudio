@@ -47,18 +47,34 @@ export function get_scene_tree() {
   let full;
   let faceTexture;
   let fullTexture;
+  let parent = new THREE.Group();
 
   function loadModel() {
     // TODO: properly set position, rotation and scale
-    face.scale.set(0.1, 0.1, 0.1);
-    face.rotation.set(-90, 0, 0);
-    face.material.map = faceTexture;
-    sceneTree.set_object_from_path(['Model', 'Face'], face);
+    if (face) {
+      face.scale.set(0.1, 0.1, 0.1);
+      face.rotation.set(-90, 0, 0);
+      face.material.map = faceTexture;
+      parent.add(face);
+      //sceneTree.set_object_from_path(['Model', 'Face'], face);
+    }
 
-    full.scale.set(0.1, 0.1, 0.1);
-    full.rotation.set(-90, 0, 0);
-    full.material.map = fullTexture;
-    sceneTree.set_object_from_path(['Model', 'Head'], full);
+    if (full) {
+      full.scale.set(0.1, 0.1, 0.1);
+      full.rotation.set(-90, 0, 0);
+      full.material.map = fullTexture;
+      parent.add(full);
+      //sceneTree.set_object_from_path(['Model', 'Head'], full);
+    }
+
+    if (face && full) {
+      transform_controls.detach();
+      transform_controls.attach(parent);
+      transform_controls.addEventListener('change', function() {
+        console.log(parent.position);
+      })
+      sceneTree.set_object_from_path(['Model'], parent);
+    }
   }
 
   const manager = new THREE.LoadingManager( loadModel );
