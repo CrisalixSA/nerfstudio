@@ -14,6 +14,7 @@ import SceneNode from '../../SceneNode';
 import { WebSocketContext } from '../WebSocket/WebSocket';
 import { subscribe_to_changes } from '../../subscriber';
 import { snap_to_camera } from '../SidePanel/SidePanel';
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 
 const msgpack = require('msgpack-lite');
 
@@ -40,6 +41,65 @@ export function get_scene_tree() {
   };
 
   const sceneTree = new SceneNode(scene, scene_state);
+
+  // hardcoded fullhead model
+  let face;
+  let full;
+  let faceTexture;
+  let fullTexture;
+  let parent = new THREE.Group();
+
+  function loadModel() {
+    // TODO: properly set position, rotation and scale
+    if (face) {
+      face.scale.set(0.1, 0.1, 0.1);
+      face.rotation.set(-90, 0, 0);
+      face.material.map = faceTexture;
+      parent.add(face);
+      //sceneTree.set_object_from_path(['Model', 'Face'], face);
+    }
+
+    if (full) {
+      full.scale.set(0.1, 0.1, 0.1);
+      full.rotation.set(-90, 0, 0);
+      full.material.map = fullTexture;
+      parent.add(full);
+      //sceneTree.set_object_from_path(['Model', 'Head'], full);
+    }
+
+    if (face && full) {
+      transform_controls.detach();
+      transform_controls.attach(parent);
+      transform_controls.addEventListener('change', function() {
+        console.log(parent.position);
+      })
+      sceneTree.set_object_from_path(['Model'], parent);
+    }
+  }
+
+  const manager = new THREE.LoadingManager( loadModel );
+  // instantiate a loader
+  const loader = new OBJLoader(manager);
+
+  // load a resource
+  loader.load(
+      // resource URL
+      'face.obj',
+      // called when resource is loaded
+      function ( obj ) {
+        // ObjLoader returns a group, take just the mesh
+        face = obj.children[0];
+      }
+  );
+
+  loader.load('full_scan.obj',
+      function (obj) {
+        full = obj.children[0];
+  })
+
+  const textureLoader = new THREE.TextureLoader( manager );
+  faceTexture = textureLoader.load( 'face.jpg' );
+  fullTexture = textureLoader.load( 'scan.jpg' );
 
   const dispatch = useDispatch();
   const BANNER_HEIGHT = 50;
