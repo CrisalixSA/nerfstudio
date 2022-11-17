@@ -269,6 +269,20 @@ export function get_scene_tree() {
     camera_controls.enabled = !event.value;
   });
 
+
+  document.addEventListener("keydown", onDocumentKeyDown, false);
+  function onDocumentKeyDown(event) {
+    var keyCode = event.which;
+    if (keyCode == 82) {
+      transform_controls.setMode("rotate")
+    } else if (keyCode == 84) {
+      transform_controls.setMode("translate")
+    } else if (keyCode == 67) {
+      transform_controls.setMode("scale")
+    }
+  };
+
+
   // if you drag the screen when the render camera is shown,
   // then snap back to the main camera
   // eslint-disable-next-line no-unused-vars
