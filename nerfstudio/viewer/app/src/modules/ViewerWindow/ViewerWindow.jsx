@@ -205,6 +205,23 @@ export default function ViewerWindow(props) {
     render();
   }, []);
 
+  const fullscreen = () => {
+    if (document.querySelector(".fullscreen-button").innerHTML === "&gt;") {
+      document.querySelector(".fullscreen-button").innerHTML = "<";
+      console.log(document.querySelector(".SidePanel"))
+      document.querySelector(".SidePanel").style.display = "none";
+      document.querySelector(".WebRTCVideo").style.width = "100%";
+      document.querySelector(".canvas-container-main").style.width = "100%";
+      document.querySelector(".ViewerWindow-render-crop-container").style.width = "100%";
+    } else {
+      document.querySelector(".fullscreen-button").innerHTML = ">";
+      document.querySelector(".SidePanel").style.display = "block";
+      document.querySelector(".WebRTCVideo").style.width = "auto";
+      document.querySelector(".canvas-container-main").style.width = "auto";
+      document.querySelector(".ViewerWindow-render-crop-container").style.width = "auto";
+    }
+  }
+
   // updates the current camera with the field of view
   useEffect(() => {
     sceneTree.metadata.camera.fov = field_of_view;
@@ -261,9 +278,7 @@ export default function ViewerWindow(props) {
       {/* the webrtc viewer needs to know the camera pose */}
       <WebRtcWindow />
       <div className="canvas-container-main" ref={myRef}>
-        <div className="ViewerWindow-camera-toggle">
-          <CameraToggle />
-        </div>
+        <button className="fullscreen-button MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall banner-button css-1smxlk4-MuiButtonBase-root-MuiButton-root" style={{position: "absolute", bottom: "10px", right: "10px"}} onClick={fullscreen}>></button>
       </div>
       <div className="ViewerWindow-buttons" style={{ display: 'none' }}>
         <TransformIcons sceneTree={sceneTree} />

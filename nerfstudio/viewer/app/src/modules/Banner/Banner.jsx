@@ -36,33 +36,15 @@ export default function Banner() {
 
   return (
     <div className="banner">
+      <div style={{display: "flex"}}>
       <LandingModal initial_state={open_modal} />
-      <Button // button with view in ar icon
-        className="banner-button"
-        variant="outlined"
-        startIcon={<GitHubIcon />}
-        target="_blank"
-        href="https://github.com/nerfstudio-project/nerfstudio"
-        size="small"
-      >
-        Github
-      </Button>
-      <Button // button with view in ar icon
-        className="banner-button"
-        variant="outlined"
-        startIcon={<DescriptionRoundedIcon />}
-        target="_blank"
-        href="https://docs.nerf.studio"
-        size="small"
-      >
-        Documentation
-      </Button>
       <ViewportControlsModal />
+      </div>
 
       <div className="banner-logo">
         <img
           style={{ height: 30, margin: 'auto' }}
-          src="https://docs.nerf.studio/en/latest/_images/logo-dark.png"
+          src="./logo.png"
           alt="The favicon."
         />
       </div>

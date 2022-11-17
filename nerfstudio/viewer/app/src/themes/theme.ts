@@ -2,11 +2,11 @@ import { createTheme } from '@mui/material/styles';
 
 export const appTheme = createTheme({
   palette: {
-    primary: { main: '#EEEEEE' },
-    secondary: { main: '#FFD369' },
+    primary: { main: '#137191' },
+    secondary: { main: '#4a94b5' },
     text: {
-      primary: '#EEEEEE',
-      secondary: '#FFD369',
+      primary: '#137191',
+      secondary: '#4a94b5',
       disabled: '#555555',
     },
   },
@@ -21,7 +21,7 @@ export const appTheme = createTheme({
     MuiIcon: {
       styleOverrides: {
         root: {
-          color: '#eeeeee',
+          color: '#137191',
         },
       },
     },
@@ -55,8 +55,8 @@ export const appTheme = createTheme({
       styleOverrides: {
         root: {
           '&.Mui-disabled': {
-            color: '#999999',
-            backgroundColor: '#393e46',
+            color: '#137191',
+            backgroundColor: '#dae9ec',
           },
         },
       },
@@ -64,11 +64,11 @@ export const appTheme = createTheme({
     MuiIconButton: {
       styleOverrides: {
         root: {
-          color: '#eeeeee',
-          backgroundColor: '#393e46',
+          color: '#137191',
+          backgroundColor: '#dae9ec',
           '&:hover': {
-            color: '#FFD369',
-            backgroundColor: '#555555',
+            color: '#dae9ec',
+            backgroundColor: '#137191',
           },
         },
       },
@@ -91,8 +91,9 @@ export const appTheme = createTheme({
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          backgroundColor: '#393e46',
+          backgroundColor: '#dae9ec',
           '&:hover': {
+            color: '#137191',
             backgroundColor: '#555555',
           },
         },
@@ -113,11 +114,11 @@ export const appTheme = createTheme({
     MuiToggleButtonGroup: {
       styleOverrides: {
         root: {
-          color: '#eeeeee',
-          backgroundColor: '#393e46',
+          color: '#137191',
+          backgroundColor: '#dae9ec',
           '&.Mui-disabled': {
-            color: '#999999',
-            backgroundColor: '#393e46',
+            color: '#137191',
+            backgroundColor: '#dae9ec',
           },
         },
       },
@@ -125,15 +126,15 @@ export const appTheme = createTheme({
     MuiToggleButton: {
       styleOverrides: {
         root: {
-          color: '#eeeeee',
-          backgroundColor: '#393e46',
+          color: '#137191',
+          backgroundColor: '#dae9ec',
           '&.Mui-selected': {
-            color: '#FFD369',
-            backgroundColor: '#555555',
+            color: '#dae9ec',
+            backgroundColor: '#137191',
           },
           '&.Mui-disabled': {
-            color: '#999999',
-            backgroundColor: '#393e46',
+            color: '#137191',
+            backgroundColor: '#ebeff0',
           },
         },
       },

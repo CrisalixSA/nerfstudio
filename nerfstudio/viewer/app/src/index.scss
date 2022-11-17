@@ -19,15 +19,15 @@ code {
   height: 100vh;
 }
 
-$base-color1: #292d39;
-$base-color2: #222831;
-$base-color3: #393e46;
-$accent-color1: #db5200;
-$accent-color2: #ff8600;
-$accent-color3: #ffd369;
-$highlight-color1: #606980;
-$highlight-color2: #eeeeee;
-$highlight-color3: #ffffff;
+$base-color1: #ebeff0;
+$base-color2: #dae9ec;
+$base-color3: #cdd3d4;
+$accent-color1: #137191;
+$accent-color2: #137191;
+$accent-color3: #137191;
+$highlight-color1: #137191;
+$highlight-color2: #137191;
+$highlight-color3: #137191;
 
 .banner {
   position: absolute;
@@ -38,6 +38,8 @@ $highlight-color3: #ffffff;
   width: 100%;
   z-index: 1000;
   background-color: $base-color2;
+  display:flex;
+  justify-content: space-between;
 
   .banner-button {
     margin: 10px;
@@ -46,8 +48,6 @@ $highlight-color3: #ffffff;
 
   .banner-logo {
     margin: 10px;
-    margin-right: 120px;
-    float: right;
   }
 }
 

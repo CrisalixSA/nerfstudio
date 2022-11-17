@@ -1,16 +1,16 @@
 {
   "colors": {
-    "elevation1": "#292d39",
-    "elevation2": "#222831",
-    "elevation3": "#393E46",
-    "accent1": "#ffc640",
-    "accent2": "#FFD369",
-    "accent3": "#ffd65c",
-    "highlight1": "#d1d4db",
-    "highlight2": "#EEEEEE",
-    "highlight3": "#222831",
-    "disabled": "#595959",
-    "vivid1": "#ffcc00"
+    "elevation1": "#ebeff0",
+    "elevation2": "#dae9ec",
+    "elevation3": "#cdd3d4",
+    "accent1": "#137191",
+    "accent2": "#137191",
+    "accent3": "#137191",
+    "highlight1": "#137191",
+    "highlight2": "#137191",
+    "highlight3": "#137191",
+    "disabled": "#137191",
+    "vivid1": "#137191"
   },
   "radii": {
     "xs": "2px",

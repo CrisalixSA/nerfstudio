@@ -315,7 +315,7 @@ function CameraList(props) {
         onChange={handleChange(camera.uuid)}
       >
         <AccordionSummary
-          expandIcon={<ExpandMore sx={{ color: '#eeeeee' }} />}
+          expandIcon={<ExpandMore sx={{ color: '#137191' }} />}
           aria-controls="panel1bh-content"
           id="panel1bh-header"
         >
