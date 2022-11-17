@@ -278,7 +278,7 @@ export default function ViewerWindow(props) {
       {/* the webrtc viewer needs to know the camera pose */}
       <WebRtcWindow />
       <div className="canvas-container-main" ref={myRef}>
-        <button className="fullscreen-button MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall banner-button css-1smxlk4-MuiButtonBase-root-MuiButton-root" style={{position: "absolute", bottom: "10px", right: "10px"}} onClick={fullscreen}>></button>
+        <button className="fullscreen-button MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeSmall MuiButton-outlinedSizeSmall banner-button css-1smxlk4-MuiButtonBase-root-MuiButton-root" style={{position: "absolute", bottom: "10px", right: "10px", backgroundColor: "#dae9ec"}} onClick={fullscreen}>></button>
       </div>
       <div className="ViewerWindow-buttons" style={{ display: 'none' }}>
         <TransformIcons sceneTree={sceneTree} />

@@ -29,15 +29,16 @@ export default function ControlsModal() {
         <Box className="ViewportConstrolsModal-box">
           <center>
             <img
-              style={{ height: 37, margin: 'auto' }}
-              src="./logo.png"
-              alt="The favicon."
-            />
-            <img
               style={{ width: '100%', paddingTop: '30px', margin: 'auto' }}
               src="https://assets.nerf.studio/keyboard_controls.png"
               alt="Controls diagram"
             />
+            <div className="modal-controls">
+              <p>Reconstruction</p>
+              <span><button className="modal-controls-button">T</button>Translate</span>
+              <span><button className="modal-controls-button">R</button>Rotate</span>
+              <span><button className="modal-controls-button">C</button>Scale</span>
+            </div>
           </center>
         </Box>
       </Modal>

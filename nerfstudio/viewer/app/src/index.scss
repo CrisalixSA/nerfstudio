@@ -196,7 +196,7 @@ $sidebar-width: 100% !default;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 800px; // 400
-  background-color: $base-color2;
+  background-color: #137191;
   border: 2px solid #000;
   //   box-shadow: 24px 24px;
   padding: 32px;
@@ -392,4 +392,36 @@ $viewer_button_size: 50px;
 .ExportModal-button {
   // margin: 15px;
   padding: 20px;
+}
+
+.modal-controls-button {
+  font-weight: 100;
+  font-size: 22px;
+  pointer-events: none;
+  background-color: transparent;
+  color:white;
+  width: 60px;
+  height:60px;
+  border-radius: 10px;
+  border: 1px solid white;
+  margin-bottom: 4px;
+}
+
+.modal-controls {
+  color:white;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: 1px solid white;
+  padding-top: 10px;
+
+  span {
+    margin: 10px 20px;
+    display:inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 20px;
+  }
 }
